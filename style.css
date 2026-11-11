@@ -1,1 +1,80 @@
-/* eafa */
+/* 1. RESET AND ATMOSPHERE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #111;
+    color: #eee;
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden; /* Prevents scrolling */
+}
+
+/* 2. BASE SCREEN LAYOUT (Hidden by Default) */
+.game-screen {
+    display: none; /* Hides all screens initially */
+    height: 100vh;
+    width: 100vw;
+    
+    /* Flexbox settings to perfectly center text dead-middle */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    text-align: center;
+}
+
+/* 3. THE SINGLE PAGE ROUTING LOGIC */
+/* Show the screen if its ID matches the #target in the URL */
+.game-screen:target {
+    display: flex;
+}
+
+/* Default state: Show #main if there is no #target in the URL yet */
+#main {
+    display: flex;
+}
+
+/* Hide #main if any OTHER screen is currently targeted */
+body:has(.game-screen:target:not(#main)) #main {
+    display: none;
+}
+
+/* 4. TYPOGRAPHY AND SPACING */
+.game-title {
+    font-size: 4rem;
+    letter-spacing: 0.3rem;
+    margin-bottom: 3rem;
+    text-shadow: 2px 2px 0px #555; /* Retro drop shadow */
+}
+
+.menu-list ul {
+    list-style: none;
+}
+
+.menu-list a {
+    text-decoration: none;
+    color: #888;
+    font-size: 2rem;
+    display: block;
+    margin: 1.5rem 0; /* Vertical spacing between menu items */
+    position: relative;
+    transition: color 0.1s;
+}
+
+/* 5. INTERACTIVE HOVER STATE */
+.menu-list a:hover {
+    color: #fff;
+}
+
+.menu-list a::before {
+    content: '- ';
+    opacity: 0;
+    position: absolute;
+    left: -2rem; /* Positions the dash cleanly to the left */
+}
+
+.menu-list a:hover::before {
+    opacity: 1;
+}

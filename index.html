@@ -1,16 +1,54 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>
-            Setup check
-        </title>
-    </head>
-    
-    <br>
-        <h1 style="color: tomato;">THIS IS A TEST</h1>
-        <p title="anjay">jir</p>
-        <hr>
-        <br>asdasdsd</br>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Single Page Game Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    </body>
+    <!-- MAIN MENU -->
+    <main class="game-screen" id="main">
+        <h1 class="game-title">Mist or Beast</h1>
+        <nav class="menu-list">
+            <ul>
+                <!-- Clicking these updates the URL to end in #options or #load -->
+                <li><a href="#load">Start</a></li>
+                <li><a href="#options">Options</a></li>
+                <li><a href="#credits">Learn More</a></li>
+            </ul>
+        </nav>
+    </main>
+
+
+    <!-- START -->
+    <main class="game-screen" id="Start">
+        <h1 class="game-title">LOAD SAVE</h1>
+        <nav class="menu-list">
+            <ul>
+                <li><a href="#">Save 1: The Dark Forest</a></li>
+                <li><a href="#">Save 2: Castle Ruins</a></li>
+                <li><a href="#main">Back to Menu</a></li>
+            </ul>
+        </nav>
+    </main>
+
+
+    <!-- OPTIONS MENU -->
+    <main class="game-screen" id="options">
+        <h1 class="game-title">OPTIONS</h1>
+        <nav class="menu-list">
+            <ul>
+                <li><a href="#">Audio: 100%</a></li>
+                <li><a href="#">Graphics: Ultra</a></li>
+                <!-- Pointing href to #main returns the user to the first screen -->
+                <li><a href="#main">Back to Menu</a></li>
+            </ul>
+        </nav>
+    </main>
+
+    <!-- LEARN MORE -->
+     <main class="game-screen" id=""
+
+</body>
 </html>
