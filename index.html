@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- setup (head) -->
 <head>
     <meta charset="UTF-8">
-    <title>Single Page Game Menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paman Buas Website</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- MAIN MENU -->
-    <main class="game-screen" id="main">
+    <main class="main-menu" id="main">
+        
+        <!-- title -->
         <h1 class="game-title">Mist of east</h1>
-        <nav class="menu-list">
+        <nav class="main-menu-list">
             <ul>
                 <!-- Clicking these updates the URL to end in #options or #load -->
-                <li><a href="#Start">Starttt</a></li>
+                <li><a href="#Start">Start Adventure</a></li>
                 <li><a href="#Options">Options</a></li>
                 <li><a href="#LearnMore">Learn More</a></li>
             </ul>
         </nav>
+
+        <!-- footer-->
+        <footer class="main-menu-footer">
+            <div class="footer-text">Paman Buas Foundation™ ©</div>
+        </footer>
     </main>
 
 
@@ -26,9 +36,9 @@
         <h1 class="game-title">MISTUH bis</h1>
         <nav class="menu-list">
             <ul>
-                <li><a href="#">Lorem</a></li>
-                <li><a href="#">Ipsuh</a></li>
-                <li><a href="#">Ipsuh</a></li>
+                <li><a href="#">Math</a></li>
+                <li><a href="#">Physics</a></li>
+                <li><a href="#">Electro (locked)</a></li>
                 <li><a href="#main">Back to Menu</a></li>
             </ul>
         </nav>
@@ -36,13 +46,19 @@
 
 
     <!-- OPTIONS MENU -->
+     <!-- todo list
+        => working audio options
+        => working music options
+        => accesable from main menu and when playing the game
+    
+    -->
+
     <main class="game-screen" id="Options">
         <h1 class="game-title">OPTIONS</h1>
         <nav class="menu-list">
             <ul>
                 <li><a href="#">Audio: 100%</a></li>
-                <li><a href="#">Graphics: Ultra</a></li>
-                <!-- Pointing href to #main returns the user to the first screen -->
+                <li><a href="#">Music: im mr beast.</a></li>
                 <li><a href="#main">Back to Menu</a></li>
             </ul>
         </nav>
@@ -50,8 +66,8 @@
 
     <!-- LEARN MORE -->
     <!-- todo list
-    - make it so when hover, red clickbait arrow animation plays pointing to learn more
-    - 
+        => make it so when hover, red clickbait arrow animation plays pointing to learn more
+        => opening animation and mr beast animation(starts at open and restart at hover)
     -->
      <main class="game-screen" id="LearnMore">
         <h1 class="game-title">About Us</h1>
