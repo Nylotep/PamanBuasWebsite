@@ -10,6 +10,22 @@ body {
     color: #5ccce5;
     font-family: 'Courier New', Courier, monospace;
     overflow: hidden; /* Prevents scrolling */
+
+    background-image:
+    url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><polygon points="30,20 80,50 30,80" fill="none" stroke="%23ffffff" stroke-opacity="0.3" stroke-width="4" stroke-linejoin="round"/></svg>'),
+    linear-gradient(135deg, #fff275 0%, #ffcc00 100%);
+    background-size: 100px 100px, 100% 100%;
+    animation: movePattern 4s linear infinite;
+}
+
+@keyframes movePattern {
+    0%{
+        background-position: 0px 0px, 0px 0px;
+    }
+    
+    100%{
+        background-position: 100px 100px, 0px 0px;;
+    }
 }
 
 /* MAIN MENU LAYOUT (Hidden by Default) */
@@ -56,6 +72,9 @@ body:has(.main-menu:target:not(#main)) #main { display: none; }
     margin: 1.5rem 0; /* Vertical spacing between menu items */
     position: relative;
     transition: color 0.1s;
+
+    border: 2px solid #ff43c4;
+    width: 320px;
 }
 
 /* main menu list hover state */
@@ -73,6 +92,17 @@ body:has(.main-menu:target:not(#main)) #main { display: none; }
     opacity: 1;
 }
 
+.main-menu-footer {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 40px;
+}
+
 .footer-text {
-    
+    font-size: 1.2rem;
 }
