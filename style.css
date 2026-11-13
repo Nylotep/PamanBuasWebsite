@@ -6,6 +6,7 @@
 }
 
 body {
+    /* global */
     background-color: #f2d061;
     color: #5ccce5;
     font-family: 'Courier New', Courier, monospace;
@@ -18,14 +19,10 @@ body {
     animation: movePattern 4s linear infinite;
 }
 
+/* background triangle animation*/
 @keyframes movePattern {
-    0%{
-        background-position: 0px 0px, 0px 0px;
-    }
-    
-    100%{
-        background-position: 100px 100px, 0px 0px;;
-    }
+    0%{background-position: 0px 0px, 0px 0px;}
+    100%{background-position: 100px 100px, 0px 0px;}
 }
 
 /* MAIN MENU LAYOUT (Hidden by Default) */
@@ -82,7 +79,7 @@ body:has(.main-menu:target:not(#main)) #main { display: none; }
 
 
 .main-menu-list a::before {
-    content: 'a ';
+    content: '- ';
     opacity: 0;
     position: absolute;
     left: -2rem; /* Positions the dash cleanly to the left */
@@ -105,4 +102,96 @@ body:has(.main-menu:target:not(#main)) #main { display: none; }
 
 .footer-text {
     font-size: 1.2rem;
+}
+
+/* Accessibility widget */
+.acc-widget {
+    position: fixed;
+    bottom: 20px;    /* 20px from the bottom edge */
+    right: 20px;     /* 20px from the right edge */
+    z-index: 100;    /* moves forward */
+    display: flex;
+    flex-direction: column-reverse; /* Makes the pop-up panel open UPWARD above the button */
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.acc-hidden {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+}
+
+/* acc button */
+.acc-trigger {
+    /* nanti ganti custom image */
+    background-color: #7df9ff;
+    color: #ff3399;
+    border: 3px solid #ff3399;
+    border-radius: 40px;
+    padding: 10px 16px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none; /* Prevents accidental text highlighting when clicking */
+    transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+/* acc button animation */
+.acc-trigger:hover {
+    background-color: #ff3399;
+    color: #ffdf77;
+    transform: translateY(-4px);
+}
+
+/* pop up panel */
+.acc-panel {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    gap: 12px;
+    background-color: #ffffff;
+    color: #111111;
+    border: 3px solid #ff3399;
+    padding: 16px;
+    min-width: 210px;
+    box-shadow: 4px 4px 0px #ff3399; /* Retro indie drop-shadow */
+}
+
+/* Reveals the panel when the trigger checkbox is checked */
+#acc-toggle:checked ~ .acc-panel {display: flex;}
+
+.acc-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* pop up options */
+.acc-option input {
+    width: 18px;
+    height: 18px;
+    accent-color: #ff3399; /* Colors the checkbox pink */
+    cursor: pointer;
+}
+
+/* accessibility options */
+
+/* effect 1 */
+body:has(#opt-1:checked)::before {
+    animation: none;
+    transform: none;
+}
+
+/* effect 2 */
+body:has(#opt-2:checked) {
+    color: #ffffff;
+}
+
+/* effect 3 */
+body:has(#opt-3:checked)::before {
+    background: #000000;
+    filter: none;
 }

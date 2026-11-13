@@ -14,7 +14,7 @@
     <main class="main-menu" id="main">
         
         <!-- title -->
-        <h1 class="game-title">Mist of east</h1>
+        <h1 class="game-title">Mist or beast</h1>
         <nav class="main-menu-list">
             <ul>
                 <!-- Clicking these updates the URL to end in #options or #load -->
@@ -78,6 +78,36 @@
             </ul>
         </nav>
      </main>
+
+     <!-- accessibility widget -->
+     <aside class ="acc-widget" aria-label="Accessibility Options">
+
+        <!-- hidden checkbox-->
+        <input type="checkbox" id="acc-toggle" class ="acc-hidden">
+        <label for="acc-toggle" class="acc-trigger">Accessibility</label>
+
+        <!-- widget panel -->
+        <div class="acc-panel">
+
+            <!-- option 1-->
+            <label class="acc-option">
+                <input type="checkbox" id="opt-1">
+                <span>option 1</span>
+            </label>
+            
+            <!-- option 2-->
+            <label class="acc-option">
+                <input type="checkbox" id="opt-2">
+                <span>option 2</span>
+            </label>
+            
+            <!-- option 3-->
+            <label class="acc-option">
+                <input type="checkbox" id="opt-3">
+                <span>option 3</span>
+            </label>
+        </div>
+    </aside>
 
 </body>
 </html>
